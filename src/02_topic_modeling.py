@@ -90,9 +90,10 @@ def main():
     # Step 5: Additional Cleaning & Preparation for Analysis
     
     
-    #Load the default stopwords list from the GitHub source
-    stopwords_list = requests.get("https://gist.githubusercontent.com/rg089/35e00abf8941d72d419224cfd5b5925d/raw/12d899b70156fd0041fa9778d657330b024b959c/stopwords.txt").content
-    stop_words = set(stopwords_list.decode().splitlines())
+    #Load the English stopwords list from NLTK
+    nltk.download("stopwords")
+    from nltk.corpus import stopwords
+    stop_words = set(stopwords.words("english"))
     
     #Define a set of additional custom stopwords to remove from the text
     additional_words = {"adhd", "read", "reading", "comprehension", "https", "dog", "good", "bad", "gt", "post", "reddit",
