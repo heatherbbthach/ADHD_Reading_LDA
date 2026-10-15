@@ -1,0 +1,17 @@
+# Python 3.11 recommended
+
+# Data collection
+pandas
+praw
+
+# Text preprocessing
+wordcloud
+gensim
+nltk
+requests
+
+# Topic modeling, numerical computing, and visualization
+numpy<2.0
+scipy==1.12.0
+matplotlib
+pyLDAvis
