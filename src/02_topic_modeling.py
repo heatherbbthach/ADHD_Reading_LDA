@@ -305,9 +305,7 @@ def main():
     coherence='u_mass'                                                             #Define the coherence calculation method
     dictionary=id2word                                                             #Define the dictionary
     calculate_coherence_final_model(lda_model, texts, dictionary, coherence)       #Run the function
-    
-    from gensim.models import CoherenceModel, LdaModel
-    
+        
     # Function to calculate coherence values for selected topic numbers
     def calculate_selected_coherence(dictionary, corpus, texts, final_model, final_model_topics, coherence="c_v"):
         selected_topics = [1, 2] + list(range(4, 16))  # Include 1, 2, and 4-15 topics
@@ -357,8 +355,6 @@ def main():
         coherence="c_v"
     )
     
-    import matplotlib.pyplot as plt
-    import numpy as np
     
     # Use the C_V coherence values calculated during model evaluation
     models = ["model" + str(i) for i in range(start, limit + 1, step)]
