@@ -23,6 +23,20 @@ The repository includes code for:
 - identifying documents with high topic probabilities for qualitative
   interpretation.
 
+## Requirements
+
+- Python 3.11
+- Dependencies listed in `requirements.txt`
+- Reddit API credentials (required only for data collection)
+
+## Installation
+
+1. Clone the repository.
+2. Create a virtual environment using Python 3.11:
+
+   ```bash
+   python3.11 -m venv .venv
+
 ## Data availability
 
 Raw Reddit posts and comments are not distributed with this repository
