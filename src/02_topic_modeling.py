@@ -242,7 +242,6 @@ def main():
     #Call the function
     plot_coherence()
     
-    import pandas as pd
     
     # Create a list of model names
     models = ["model{0}".format(i) for i in range(1, limit + 1)]
@@ -307,7 +306,6 @@ def main():
     dictionary=id2word                                                             #Define the dictionary
     calculate_coherence_final_model(lda_model, texts, dictionary, coherence)       #Run the function
     
-    import pandas as pd
     from gensim.models import CoherenceModel, LdaModel
     
     # Function to calculate coherence values for selected topic numbers
@@ -419,7 +417,6 @@ def main():
         topic_probs = lda_model.get_document_topics(doc, minimum_probability=0.0)  # Ensure all topic probabilities are included
         doc_topic_distributions.append(topic_probs)
     
-    import pandas as pd
     
     # Create a list to store topic information
     doc_topic_data = []
