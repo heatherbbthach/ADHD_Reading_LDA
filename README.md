@@ -127,8 +127,8 @@ The analysis includes:
 2. Cleaning text using regular expressions.
 3. Generating a word cloud for exploratory analysis.
 4. Tokenizing text and removing predefined and custom stopwords.
-5. Evaluating models containing 1–15 topics using coherence measures.
-6. Fitting a final LDA model with three topics.
+5. Evaluating models containing 1–15 topics using C_V, U_Mass, C_UCI, and C_NPMI coherence measures.
+6. Fitting a final three-topic LDA model using 50 training passes.
 7. Calculating final model coherence values.
 8. Generating interactive topic visualizations using pyLDAvis.
 9. Identifying documents with high probabilities of belonging to particular topics.
@@ -139,7 +139,7 @@ To run the analysis, ensure that `data/reddit_adhd_data.csv` exists, then execut
 python src/02_topic_modeling.py
 ```
 
-The script generates coherence calculations, topic-modeling results, and visualizations. See `outputs/README.md` for additional information about generated outputs.
+The script generates coherence calculations, topic-modeling results, and visualizations. Generated files are saved to the repository root when the script is executed as instructed. See `outputs/README.md` for additional information.
 
 ### Reproducibility Considerations
 
