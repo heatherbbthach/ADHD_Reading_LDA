@@ -1,0 +1,64 @@
+
+# ==========================================
+# ADHD Reading LDA - Git Ignore
+# ==========================================
+
+# Reddit API credentials and secrets
+credentials.csv
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Raw Reddit data and datasets
+reddit_adhd_data*.csv
+data/*
+!data/README.md
+!data/.gitkeep
+
+# Generated research outputs
+outputs/*
+!outputs/README.md
+!outputs/.gitkeep
+ldavis_prepared*
+top_documents_per_topic.txt
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python packaging and build files
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files and logs
+*.log
+*.tmp
+*.bak
