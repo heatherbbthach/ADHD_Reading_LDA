@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code in your research, please cite the associated publication."
+
+title: "Topic Modeling of ADHD Discourse on Reading Challenges: Analysis Code"
+type: software
+repository-code: "https://github.com/heatherbbthach/ADHD_Reading_LDA"
+
+authors:
+  - family-names: Thach
+    given-names: Heather
+  - family-names: Ridenour
+    given-names: Laura
+
+preferred-citation:
+  type: article
+  title: "Topic Modeling of ADHD Discourse on Reading Challenges: Cognitive Differences and Systemic Factors"
+  authors:
+    - family-names: Thach
+      given-names: Heather
+    - family-names: Ridenour
+      given-names: Laura
+  journal: Neurodiversity
+  volume: 3
+  year: 2025
+  doi: 10.1177/27546330251395890
