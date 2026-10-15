@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-
 # Latent Dirichlet Allocation (LDA) Analysis of Reddit Posts and Comments
+# Part 1: Pull Data from Reddit API and Save to CSV
 
-## Part 1: Pull Data from Reddit API and Save to CSV
-
-### Step 1: Install and Import Required Libraries
-"""
+# Step 1: Install and Import Required Libraries
 
 # Install dependencies using requirements.txt (see README.md)
 
@@ -14,11 +9,11 @@ import pandas as pd
 import praw
 import csv
 
-"""### Step 2: Authenticate into Reddit API using PRAW"""
+# Step 2: Authenticate into Reddit API using PRAW
 
 #Define a function to read Reddit API credentials from a CSV file
 def read_credentials(csv_file):                       #Argument is a CSV file
-    credentials_df = pd.read_csv(csv_file)            #Read in the CSV with Pandas, create a dafaframe, and name it "credentials_df"
+    credentials_df = pd.read_csv(csv_file)            #Read in the CSV with Pandas, create a dataframe, and name it "credentials_df"
     row = credentials_df.iloc[0]                      #Pull the first row of data from the dataframe and name it "row"
     return {                                          #Return a dictionary with the specified keys and corresponding values from the dataframe
             "client_id": row["client_id"],
@@ -44,13 +39,11 @@ reddit = praw.Reddit(                                 #Create a Reddit instance 
 #Test the connection
 print("Authenticated as", reddit.user.me())           #If authenticated correctly, this will print the username of the authenticated user.
 
-"""##### Sources for Above Code
-PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/
+# Sources for Above Code
+# PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/
+# Quick Start - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
 
-Quick Start - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
-
-### Step 3: Get Data from Reddit API and Save to CSV
-"""
+# Step 3: Get Data from Reddit API and Save to CSV
 
 #Define a function to get posts, their comments, and associated data from a Reddit Search
 def get_all_search_results_to_csv(reddit, query, csv_filename, batch_size=500):        #Arguments are Reddit instance (defined above), the search query, a CSV filename, and a batch size for processing (predefined)
@@ -80,14 +73,13 @@ query = '"ADHD" "Reading Comprehension"'                                        
 get_all_search_results_to_csv(reddit, query, csv_filename)                             #Call the function with the arguments
 
 
-"""##### Sources for Above Code
-Comment - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/code_overview/models/comment.html
+# Sources for Above Code
+# Comment - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/code_overview/models/comment.html
 
-MoreComments - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/code_overview/models/more.html#morecomments
+# MoreComments - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/code_overview/models/more.html#morecomments
 
-PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/
+# PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/
 
-Submission - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/code_overview/models/submission.html
-"""
+# Submission - PRAW 7.7.1 documentation. (n.d.). https://praw.readthedocs.io/en/stable/code_overview/models/submission.html
 
 # Note: credentials.csv is a local-only file and must not be committed to GitHub.
