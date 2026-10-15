@@ -148,7 +148,7 @@ def compute_coherence_values(dictionary, corpus, texts, coherence, limit, start=
         model = LdaModel(corpus=corpus, id2word=dictionary, num_topics=num_topics, passes=passes, random_state=42)               #Create an LDA model for the given number of topics
         model_list.append(model)                                                                 #Add the model to the list of models
 
-        coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence=coherence)       #Compute coherence for the model
+        coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence=coherence, processes=1)       #Compute coherence for the model
         coherence_values.append(coherencemodel.get_coherence())                                                     #Add the coherence value for the model to the list
         topic_coherence_values.append(coherencemodel.get_coherence_per_topic())                                     #Add the coherence values for the topics to the list
 
@@ -292,7 +292,7 @@ print_topics(lda_model)
 
 #Define a function to calculate the coherence of the final model
 def calculate_coherence_final_model(lda_model, texts, dictionary, coherence):                                    #Take the model, texts, dictionary, and coherence method as arguments
-    coherence_model = CoherenceModel(model=lda_model, texts=texts, dictionary=id2word, coherence=coherence)      #Create the coherence model
+    coherence_model = CoherenceModel(model=lda_model, texts=texts, dictionary=id2word, coherence=coherence, processes=1)      #Create the coherence model
     coherence_lda = coherence_model.get_coherence()                                                              #Get the coherence value for the model
     print('\nCoherence Score: ', coherence, coherence_lda)                                                       #Print the coherence score, the coherence method, and value
 
@@ -319,11 +319,11 @@ def calculate_selected_coherence(dictionary, corpus, texts, final_model, final_m
         model = LdaModel(corpus=corpus, id2word=dictionary, num_topics=num_topics, passes=passes, random_state=42)
         models.append("model" + str(num_topics))
 
-        coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence=coherence)
+        coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence=coherence, processes=1)
         coherence_values.append(coherencemodel.get_coherence())
 
     # Get coherence for final model
-    final_coherencemodel = CoherenceModel(model=final_model, texts=texts, dictionary=dictionary, coherence=coherence)
+    final_coherencemodel = CoherenceModel(model=final_model, texts=texts, dictionary=dictionary, coherence=coherence, processes=1)
     final_coherence_value = final_coherencemodel.get_coherence()
 
     # Add final model results to the list
