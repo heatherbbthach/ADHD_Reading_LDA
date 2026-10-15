@@ -25,7 +25,7 @@ import pyLDAvis
 #Define a function to read the data and create a dataframe
 def read_data(csv_file):                                                                        #Pass one argument, csv file
     dataframe = pd.read_csv(csv_file)                                             #Use Pandas to read in the data from CSV and create a dataframe
-    dataframe= dataframe.drop(columns=["ID", "Parent ID", "Post URL", "Type"], axis=1)          #Remove all columns except the body and title                                                             #Print out the first rows of df to check
+    dataframe= dataframe.drop(columns=["ID", "Parent ID", "Post URL", "Type"])          #Remove all columns except the body and title                                                             #Print out the first rows of df to check
     return dataframe
 
 #Call the function
