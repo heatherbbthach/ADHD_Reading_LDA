@@ -25,6 +25,7 @@ The computational analysis was complemented by qualitative interpretation of the
 ADHD_Reading_LDA/
 ├── README.md
 ├── CITATION.cff
+├── LICENSE
 ├── requirements.txt
 ├── .gitignore
 ├── src/
@@ -156,6 +157,10 @@ The published study used publicly accessible Reddit discussions; however, the re
 The data-collection script is provided to document the original collection procedure and support methodological transparency.
 
 Additional information about the dataset structure is available in `data/README.md`.
+
+## License
+
+The code in this repository is distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Citation
 
