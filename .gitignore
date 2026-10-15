@@ -23,6 +23,8 @@ outputs/*
 !outputs/.gitkeep
 ldavis_prepared*
 top_documents_per_topic.txt
+coherence_values_table.csv
+coherence_values.csv
 
 # Python cache and compiled files
 __pycache__/
